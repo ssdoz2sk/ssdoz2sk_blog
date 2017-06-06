@@ -1,0 +1,25 @@
+sudo: false
+dist: trusty
+
+language: ruby
+
+rvm:
+  - 2.3.1
+
+before_install:
+    - gem install jekyll bundle
+
+install:
+    - git clone --depth 1 https://github.com/ssdoz2sk/ssdoz2sk_blog.git ssdoz2sk_blog
+    - cd ssdoz2sk_blog
+    - bundle install
+    - git clone --depth 1 https://$GH_TOKEN@github.com/ssdoz2sk/ssdoz2sk.github.io _site
+
+script:
+    - bundle exec jekyll build --incremental
+
+after_success:
+    - cd _site
+    - git add -A .
+    - git commit -m "update from travis $(date '+%Y-%m-%d %H:%M %z')"
+    - git push --quiet

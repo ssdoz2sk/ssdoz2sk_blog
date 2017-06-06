@@ -204,7 +204,7 @@ body {
 .theme-niangko .post-date {
 	float: right;
     font-size: 1rem;
-    margin-bottom: .5rem;
+	margin-top: -2rem;
 }
 
 .theme-niangko .post, 
@@ -237,6 +237,7 @@ body {
 .theme-niangko .post .post-title a {
     color: #268bd2;
 	text-align: center;
+	margin-bottom: 1rem;
 	border-bottom-width: 0;
 }
 .theme-niangko .post .post-title :hover {
@@ -306,35 +307,58 @@ body {
 /* End of Tag summary */
 /* Archives */
 
-.theme-niangko .archive li {
+.theme-niangko .archive li,
+.theme-niangko .tag li {
     list-style: none;
-    padding: 0 0 15px 0;
+    padding: 10px 0 10px 0;
+	margin-bottom: 20px; 
 }
-.theme-niangko .archive div {
+.theme-niangko .archive li:hover,
+.theme-niangko .tag li:hover {
+    background-color: #4F4F4F;
+}
+.theme-niangko .archive div,
+.theme-niangko .tag div {
     display: inline-block;
 }
-.theme-niangko .archive .month {
+.theme-niangko .archive .month,
+.theme-niangko .tag .month {
     width: 10%;
     vertical-align: top;
     color: #9a9a9a;
 }
-.theme-niangko .archive .archive-post-title {
+.theme-niangko .archive .archive-post-title,
+.theme-niangko .tag .tag-post-title  {
     width: 88%;
     line-height: 25px;
 }
+.theme-niangko .archive .tags,
+.theme-niangko .tag .tags {
+	float: right;
+	margin-top: -5px;
+}
 @media screen and (max-width: 480px) {
-    .theme-niangko .archive .month {
+    .theme-niangko .archive .month,
+    .theme-niangko .tag .month  {
         width: 10%;
         margin-right: 4%;
     }
-    .theme-niangko .archive .archive-post-title {
+    .theme-niangko .archive .archive-post-title,
+    .theme-niangko .tag .tag-post-title  {
         width: 84%;
     }
+	.theme-niangko .archive .tags,
+	.theme-niangko .tag .tags {
+		float: none;
+		margin-top: 0;
+	}
 }
-.theme-niangko .archive a {
+.theme-niangko .archive a,
+.theme-niangko .tag a  {
     color: #868bd2;
 }
-.theme-niangko .archive a:hover {
+.theme-niangko .archive a:hover, 
+.theme-niangko .tag a:hover {
     color: #9aacac;
     text-decoration: none;
 }
@@ -364,13 +388,16 @@ body {
     padding: .2em .6em .3em;
     font-size: 14px;
     font-weight: bold;
-    background-color: #268bd2;
+    background-color: #263b72;
     color: white;
     font-style: normal;
     opacity: 0.7;
 }
 .theme-niangko .tags:hover {
     opacity: 1;
+}
+.theme-niangko .tags a{
+    color: orange;
 }
 .theme-niangko .comment-count {
     display: inline-block;
