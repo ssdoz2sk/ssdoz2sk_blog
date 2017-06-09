@@ -11,6 +11,8 @@ tags: github pages travis travis-ci jekyll
 
 另外一種是在 client 端寫好，編譯完成後的 HTML 跟 CSS Push 到 Github Page，而這時的 Pages 就只是個單純的靜態網頁存放地點而已。   
 
+<!--more-->
+
 而且 Page 內的外掛有不支援自動產生 tags 的部分，所有的標籤需要手動增加，在 Github 上找到一個 [外掛](https://github.com/pattex/jekyll-tagging/pull/60)，依照 posts 上的 tags 屬性能自動產生，有了標籤就不用擔心哪天文章多的時候會變得難以整理。再加上我有三台電腦在使用，寫 Blog 的時間也不太固定，Win10 灌 ruby 又很麻煩(我懶)。   
 
 再說，Jekyll 也沒像 wordpress 一樣有提供 Web 的編輯頁面，如果有時候只是為了更改幾個錯字的話，電腦得安裝 ruby + jekyll 才能更改 Blog 內的內容，也不是很方便。   
@@ -63,11 +65,11 @@ Build Jekyll 產生靜態檔案，`script` 標籤內必須要有指令，不然�
 
 1. 首先先到 Github 上，打開帳號設定，選擇 [Personal access tokens
 Generate new token](https://github.com/settings/tokens)，新增一個 new token，再來就會拿到一個 token ，請複製起來。   
-[Github generate new token]({{ site.url }}/public/img/2017-06-09/github_generate_new_token.png)    
+![Github generate new token]({{ site.url }}/public/img/2017-06-09/github_generate_new_token.png)    
 
 2. 到 Travis-CI 內剛剛打開的 Project ，點選右上角的設定，到 Environment Variables 增加一個環境變數，比如說 `GH_TOKEN` : `XXXXXXXXXXXXXXXXXXXXXXX`   
-[Travis CI setting]({{ site.url }}/public/img/2017-06-09/travis_ci_setting.png)   
-[Travis CI setting2]({{ site.url }}/public/img/2017-06-09/travis_ci_setting2.png)   
+![Travis CI setting]({{ site.url }}/public/img/2017-06-09/travis_ci_setting.png)   
+![Travis CI setting2]({{ site.url }}/public/img/2017-06-09/travis_ci_setting2.png)   
 
         `git push` 請記得加上 `--quiet`，你總不希望你的 token 在網路上裸奔是吧！
 
