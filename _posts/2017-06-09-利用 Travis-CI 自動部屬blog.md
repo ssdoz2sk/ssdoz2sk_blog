@@ -1,5 +1,9 @@
-[![Build Status](https://travis-ci.org/ssdoz2sk/ssdoz2sk_blog.svg?branch=master)](https://travis-ci.org/ssdoz2sk/ssdoz2sk_blog)
-
+---
+layout: post
+title: Jekyll 利用 Travis-CI 自動部屬 Blog
+comments: true
+tags: github pages travis travis-ci jekyll
+---
 
 佈署在 github.io 上的 Blog 可以有兩種方案   
 
