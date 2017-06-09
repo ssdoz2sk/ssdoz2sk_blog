@@ -1,11 +1,12 @@
 [![Build Status](https://travis-ci.org/ssdoz2sk/ssdoz2sk_blog.svg?branch=master)](https://travis-ci.org/ssdoz2sk/ssdoz2sk_blog)
 
-
 佈署在 github.io 上的 Blog 可以有兩種方案   
 
 一種是利用 github.io 內建的 Jekyll，但只有支援一些的 [外掛](https://help.github.com/articles/adding-jekyll-plugins-to-a-github-pages-site/)，ruby 跟 Jekyll [版本](https://pages.github.com/versions/)也不是最新的，   
 
 另外一種是在 client 端寫好，編譯完成後的 HTML 跟 CSS Push 到 Github Page，而這時的 Pages 就只是個單純的靜態網頁存放地點而已。   
+
+<!--more-->
 
 而且 Page 內的外掛有不支援自動產生 tags 的部分，所有的標籤需要手動增加，在 Github 上找到一個 [外掛](https://github.com/pattex/jekyll-tagging/pull/60)，依照 posts 上的 tags 屬性能自動產生，有了標籤就不用擔心哪天文章多的時候會變得難以整理。再加上我有三台電腦在使用，寫 Blog 的時間也不太固定，Win10 灌 ruby 又很麻煩(我懶)。   
 
@@ -58,16 +59,17 @@ Build Jekyll 產生靜態檔案，`script` 標籤內必須要有指令，不然�
 再來，編譯過後的該如何推上 Pages 呢？   
 
 1. 首先先到 Github 上，打開帳號設定，選擇 [Personal access tokens
-Generate new token](https://github.com/settings/tokens)，新增一個 new token，再來就會拿到一個 token ，請複製起來。   
-[Github generate new token]({{ site.url }}/public/img/2017-06-09/github_generate_new_token.png)    
+Generate new token](https://github.com/settings/tokens)   
+打好相關的設定，這 Token 的用途，還有權限(只要 `public_repo` 就好)   
+新增一個 new token，再來就會拿到一個 token ，請複製起來。   
+![Github generate new token]({{ site.url }}/public/img/2017-06-09/github_generate_new_token.png)    
 
 2. 到 Travis-CI 內剛剛打開的 Project ，點選右上角的設定，到 Environment Variables 增加一個環境變數，比如說 `GH_TOKEN` : `XXXXXXXXXXXXXXXXXXXXXXX`   
-[Travis CI setting]({{ site.url }}/public/img/2017-06-09/travis_ci_setting.png)   
-[Travis CI setting2]({{ site.url }}/public/img/2017-06-09/travis_ci_setting2.png)   
+![Travis CI setting]({{ site.url }}/public/img/2017-06-09/travis_ci_setting.png)   
+![Travis CI setting2]({{ site.url }}/public/img/2017-06-09/travis_ci_setting2.png)   
 
-        `git push` 請記得加上 `--quiet`，你總不希望你的 token 在網路上裸奔是吧！
+>  `git push` 請記得加上 `--quiet`，你總不希望你的 token 在網路上裸奔是吧！
 
-現在可以推上 github ，然後 Travis-CI 會自動運行 script。在 Travis-CI 能看到編譯過程。出了問題也可以慢慢除錯。一切如果正常的話會出現 passing ， 如果這 Blog 還正常活著應該會看到 [![Build Status](https://travis-ci.org/ssdoz2sk/ssdoz2sk_blog.svg?branch=master)](https://travis-ci.org/ssdoz2sk/ssdoz2sk_blog)。   
-
+現在可以推上 github ，然後 Travis-CI 會自動運行 script。在 Travis-CI 能看到編譯過程。出了問題也可以慢慢除錯。一切如果正常的話會出現 passing ， 如果這 Blog 還正常活著應該會看到 ![Build Status](https://travis-ci.org/ssdoz2sk/ssdoz2sk_blog.svg?branch=master)。
 
 這篇會順便發在 [README.md](https://github.com/ssdoz2sk/ssdoz2sk_blog/blob/master/README.md)

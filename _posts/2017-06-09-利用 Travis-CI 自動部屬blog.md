@@ -64,16 +64,17 @@ Build Jekyll 產生靜態檔案，`script` 標籤內必須要有指令，不然�
 再來，編譯過後的該如何推上 Pages 呢？   
 
 1. 首先先到 Github 上，打開帳號設定，選擇 [Personal access tokens
-Generate new token](https://github.com/settings/tokens)，新增一個 new token，再來就會拿到一個 token ，請複製起來。   
+Generate new token](https://github.com/settings/tokens)   
+打好相關的設定，這 Token 的用途，還有權限(只要 `public_repo` 就好)   
+新增一個 new token，再來就會拿到一個 token ，請複製起來。   
 ![Github generate new token]({{ site.url }}/public/img/2017-06-09/github_generate_new_token.png)    
 
 2. 到 Travis-CI 內剛剛打開的 Project ，點選右上角的設定，到 Environment Variables 增加一個環境變數，比如說 `GH_TOKEN` : `XXXXXXXXXXXXXXXXXXXXXXX`   
 ![Travis CI setting]({{ site.url }}/public/img/2017-06-09/travis_ci_setting.png)   
 ![Travis CI setting2]({{ site.url }}/public/img/2017-06-09/travis_ci_setting2.png)   
 
-        `git push` 請記得加上 `--quiet`，你總不希望你的 token 在網路上裸奔是吧！
+> `git push` 請記得加上 `--quiet`，你總不希望你的 token 在網路上裸奔是吧！
 
-現在可以推上 github ，然後 Travis-CI 會自動運行 script。在 Travis-CI 能看到編譯過程。出了問題也可以慢慢除錯。一切如果正常的話會出現 passing ， 如果這 Blog 還正常活著應該會看到 [![Build Status](https://travis-ci.org/ssdoz2sk/ssdoz2sk_blog.svg?branch=master)](https://travis-ci.org/ssdoz2sk/ssdoz2sk_blog)。   
-
+現在可以推上 github ，然後 Travis-CI 會自動運行 script。在 Travis-CI 能看到編譯過程。出了問題也可以慢慢除錯。一切如果正常的話會出現 passing ， 如果這 Blog 還正常活著應該會看到 ![Build Status](https://travis-ci.org/ssdoz2sk/ssdoz2sk_blog.svg?branch=master)。
 
 這篇會順便發在 [README.md](https://github.com/ssdoz2sk/ssdoz2sk_blog/blob/master/README.md)
